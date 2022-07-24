@@ -9,4 +9,5 @@ class StatisticalTest:
     def do(self):
         if self.test_type == 'prop.test':
             from statstests import prop
-            return prop.test(self.calls)
+            test_result = prop.test(self.calls)
+            return test_result.result
