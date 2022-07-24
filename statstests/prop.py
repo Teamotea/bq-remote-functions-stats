@@ -22,7 +22,7 @@ def test(calls: list[list[Any]]) -> PropTestResult:
     nobs = [p1.trials, p2.trials]
     stat, pval = proportions_ztest(count, nobs)
     result = PropTestResult([
-        f'Statistic is {stat:.4f}. Pval is {pval:.6f}.',
+        f'Statistic: {stat:.4f}. Pval: {pval:.6f}.',
         None
     ])
     return result
