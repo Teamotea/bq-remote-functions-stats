@@ -11,7 +11,7 @@ class SingleProportion:
 
 @dataclass
 class PropTestResult:
-    result: tuple[tuple[float, float], Any]
+    result: list[str]
 
 
 def test(calls: list[list[Any]]) -> PropTestResult:
@@ -21,8 +21,8 @@ def test(calls: list[list[Any]]) -> PropTestResult:
     count = [p1.successes, p2.successes]
     nobs = [p1.trials, p2.trials]
     stat, pval = proportions_ztest(count, nobs)
-    result = PropTestResult(
-        [stat, pval],
-        [None, None]  # noqa
-    )
+    result = PropTestResult([
+        f'Statistic is {stat:.4f}. Pval is {pval:.6f}.',
+        None
+    ])
     return result
