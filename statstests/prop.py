@@ -23,6 +23,6 @@ def test(calls: list[list[Any]]) -> PropTestResult:
     stat, pval = proportions_ztest(count, nobs)
     result = PropTestResult(
         [stat, pval],
-        [None, None]
+        [None, None]  # noqa
     )
     return result
