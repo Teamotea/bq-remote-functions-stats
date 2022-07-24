@@ -13,7 +13,7 @@ def main(request):
     """
     try:
         request_json = request.get_json()
-        test_type = request_json['userDefinedContext']
+        test_type = request_json['userDefinedContext']['test_type']
         calls = request_json['calls']
         stat_test = StatisticalTest(test_type, calls)
         replies = stat_test.do()
